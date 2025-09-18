@@ -1,0 +1,50 @@
+[global]
+# Setting both to 'True' will only get the bucket names and
+# the number objects for 1 named bucket of each network.
+# Only 1 set to true will get objects from 'first' to 'last'
+# Additionally sum_only will allow to disable object details in general.
+mainnet = True
+testnet = True
+sum_only = True
+
+[mainnet]
+# bucket mainnet
+endpoint_url =
+aws_access_key_id =
+aws_secret_access_key =
+bucket_name =
+# range to log or check/copy
+first = 1   			# first of sorted objects
+last = 1000  			# last of sorted objects
+with_size = False   		# get object size too
+prev_sum = 0   			# sum of previous object sizes
+
+[mainnet2]
+# bucket copy mainnet
+endpoint_url =
+aws_access_key_id =
+aws_secret_access_key =
+bucket_name =
+check_secondary = False  	# Check if object exists in this second bucket
+copy_missing = False  		# Copy objects to this bucket (only if check_in_bucket_2=True)
+
+[testnet]
+# bucket testnet
+endpoint_url =
+aws_access_key_id =
+aws_secret_access_key =
+bucket_name =
+# range to log or check/copy
+first = 1   			# first of sorted objects
+last = 1000   			# last of sorted objects
+with_size = False   		# get object size too
+prev_sum = 0   			# sum of previous object sizes
+
+[testnet2]
+# bucket copy testnet
+endpoint_url =
+aws_access_key_id =
+aws_secret_access_key =
+bucket_name =
+check_secondary = False  	# Check if object exists in this second bucket
+copy_missing = False   		# Copy objects to this bucket (only if check_in_bucket_2=True)
